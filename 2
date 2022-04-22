@@ -1,0 +1,51 @@
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+
+	srand(5); // initialize a random number seed to 5
+	const int size = 100; // Note: this is a constant NOT a variable.
+	int Values[size]; // Here is the array declaration
+	int maxNum = -1;
+	int maxIndex = -1;
+	float sum = 0;
+	float average;
+	// Load the array
+	for (int i = 0; i < size; i++)
+	{
+		Values[i] = (rand() % 100) + 1;
+		cout << Values[i] << " ";
+
+		if (Values[i] > maxNum) {
+			maxNum = Values[i];
+			maxIndex = i;
+		}
+		if (i % 10 == 0 && i !=0) { cout << endl; }
+	}
+	/*for (a = 0; a < 101; a++) // finding the average #
+	{
+		cout << a + 1 << ". Enter number: ";
+
+		sum += Values[i];
+	}*/
+
+	// Find sum of all array elements
+	for (int i = 0; i < size; i++) {
+		sum += Values[i];
+	}
+
+	average = sum / size;
+	
+	cout << endl << "Maximum number is: " << maxNum << " At Index: " << maxIndex << endl;
+	cout << "Average = " << average << endl;
+	cout << "Sum = " << sum;
+
+	
+	cout << "I AM DONE! LET'S GO HOME!!! :) ";
+	system("pause");
+	return 0;
+}
